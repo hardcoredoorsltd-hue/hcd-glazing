@@ -407,7 +407,7 @@ export default function App() {
           const tot = calcJobTotal(job, rates).total
           return (
             <div key={job.id} className={`job-pill ${job.id === activeId ? 'active' : ''}`} onClick={() => setActiveId(job.id)}>
-              <div className="job-pill-ref">{job.jobNum || <span style={{ color: '#4a5568', fontStyle: 'italic' }}>No ref</span>}</div>
+              <div className="job-pill-ref">{job.address || job.jobNum || <span style={{ color: '#4a5568', fontStyle: 'italic' }}>No address</span>}</div>
               <div className="job-pill-total">{tot > 0 ? fmt(tot) : '—'}</div>
             </div>
           )
